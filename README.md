@@ -6,7 +6,7 @@ Unfortunately this new API is poorly documented and the nature of CoreAudio make
 
 This project is provided as documentation for this new API to help developers of audio apps.
 
-https://github.com/insidegui/AudioCap/assets/67184/70749452-6ec3-44d6-aba2-433503b65965
+![demo](./Demo.mp4)
 
 ## API Description
 
@@ -33,10 +33,10 @@ Assuming the app has audio recording permission, setting up and recording audio 
 - Read `kAudioTapPropertyFormat` from the process tap to get its `AudioStreamBasicDescription`, then create an `AVAudioFormat` matching the description, this will be needed later
 - Create an `AVAudioFile` for writing with your desired settings
 - Call `AudioDeviceCreateIOProcIDWithBlock` to set up a callback for your aggregate device
-- Inside the callback, create an `AVAudioPCMBuffer` passing in your format; you can use `bufferListNoCopy` with `nil` deallocator then just call `write(from:)` `on your audio file, passing in the buffer
+- Inside the callback, create an `AVAudioPCMBuffer` passing in your format; you can use `bufferListNoCopy` with `nil` deallocator then just call `write(from:)` on your audio file, passing in the buffer
 - Call `AudioDeviceStart` with the aggregate device and IO proc ID
 - Remember to call all your `Audio...Stop` and `Audio...Destroy` cleanup functions
 - Let the `AVAudioFile` deinit to close it
 - Now you have an audio file with a recording from the system or app
 
-Thanks to [@WFT](https://github.com/WFT) for helping me with this project.
+Thanks to @WFT for helping me with this project.
