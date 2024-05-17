@@ -26,6 +26,7 @@ struct ProcessSelectionView: View {
                         .tag(Optional<AudioProcess>.some(process))
                 }
             }
+            .disabled(recorder?.isRecording == true)
             .task { processController.activate() }
             .onChange(of: selectedProcess) { oldValue, newValue in
                 guard newValue != oldValue else { return }
