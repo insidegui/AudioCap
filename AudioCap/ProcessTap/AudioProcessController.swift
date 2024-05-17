@@ -43,7 +43,7 @@ final class AudioProcessController {
 
         NSWorkspace.shared
             .publisher(for: \.runningApplications, options: [.initial, .new])
-            .map { $0.filter({ $0.activationPolicy == .regular }) }
+            .map { $0.filter({ $0.activationPolicy == .regular && $0.processIdentifier != ProcessInfo.processInfo.processIdentifier }) }
             .sink { [weak self] apps in
                 guard let self else { return }
                 self.reload(apps: apps)
