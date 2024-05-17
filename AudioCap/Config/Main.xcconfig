@@ -1,0 +1,12 @@
+// Change the bundle identifier to something unique if you get code signing errors.
+PRODUCT_BUNDLE_IDENTIFIER = codes.rambo.samplecode.AudioCap
+
+VERSIONING_SYSTEM = Apple Generic
+
+CURRENT_PROJECT_VERSION = 1
+MARKETING_VERSION = 1.0
+
+INFOPLIST_KEY_LSApplicationCategoryType = public.app-category.utilities
+
+// Private API usage can be disabled by removing the "-D ENABLE_TCC_SPI" flag below.
+OTHER_SWIFT_FLAGS = $(inherited) -D ENABLE_TCC_SPI
