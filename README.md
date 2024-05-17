@@ -6,7 +6,7 @@ Unfortunately this new API is poorly documented and the nature of CoreAudio make
 
 This project is provided as documentation for this new API to help developers of audio apps.
 
-![demo](./Demo.mp4)
+https://github.com/insidegui/AudioCap/assets/67184/70749452-6ec3-44d6-aba2-433503b65965
 
 ## API Description
 
@@ -39,4 +39,4 @@ Assuming the app has audio recording permission, setting up and recording audio 
 - Let the `AVAudioFile` deinit to close it
 - Now you have an audio file with a recording from the system or app
 
-Thanks to @WFT for helping me with this project.
+Thanks to [@WFT](https://github.com/WFT) for helping me with this project.
