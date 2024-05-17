@@ -44,9 +44,7 @@ final class ProcessTap {
         self.errorMessage = nil
 
         do {
-            let objectID = try process.audioObjectID
-
-            try prepare(for: objectID)
+            try prepare(for: process.objectID)
         } catch {
             logger.error("\(error, privacy: .public)")
             self.errorMessage = error.localizedDescription

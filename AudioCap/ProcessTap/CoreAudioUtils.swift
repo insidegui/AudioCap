@@ -24,9 +24,38 @@ extension AudioObjectID {
         try AudioDeviceID.system.readDefaultSystemOutputDevice()
     }
 
+    static func readProcessList() throws -> [AudioObjectID] {
+        try AudioObjectID.system.readProcessList()
+    }
+
     /// Reads `kAudioHardwarePropertyTranslatePIDToProcessObject` for the specific pid.
     static func translatePIDToProcessObjectID(pid: pid_t) throws -> AudioObjectID {
         try AudioDeviceID.system.translatePIDToProcessObjectID(pid: pid)
+    }
+
+    /// Reads `kAudioHardwarePropertyProcessObjectList`.
+    func readProcessList() throws -> [AudioObjectID] {
+        try requireSystemObject()
+
+        var address = AudioObjectPropertyAddress(
+            mSelector: kAudioHardwarePropertyProcessObjectList,
+            mScope: kAudioObjectPropertyScopeGlobal,
+            mElement: kAudioObjectPropertyElementMain
+        )
+
+        var dataSize: UInt32 = 0
+
+        var err = AudioObjectGetPropertyDataSize(self, &address, 0, nil, &dataSize)
+
+        guard err == noErr else { throw "Error reading data size for \(address): \(err)" }
+
+        var value = [AudioObjectID](repeating: .unknown, count: Int(dataSize) / MemoryLayout<AudioObjectID>.size)
+
+        err = AudioObjectGetPropertyData(self, &address, 0, nil, &dataSize, &value)
+
+        guard err == noErr else { throw "Error reading array for \(address): \(err)" }
+
+        return value
     }
 
     /// Reads `kAudioHardwarePropertyTranslatePIDToProcessObject` for the specific pid, should only be called on the system object.
