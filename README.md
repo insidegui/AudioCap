@@ -39,4 +39,4 @@ Assuming the app has audio recording permission, setting up and recording audio 
 - Let the `AVAudioFile` deinit to close it
 - Now you have an audio file with a recording from the system or app
 
-Thanks to @WFT for helping me with this project.
+Thanks to [@WFT](https://github.com/WFT) for helping me with this project.
