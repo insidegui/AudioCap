@@ -6,7 +6,7 @@ Unfortunately this new API is poorly documented and the nature of CoreAudio make
 
 This project is provided as documentation for this new API to help developers of audio apps.
 
-![demo](./Demo.mp4)
+https://github.com/insidegui/AudioCap/assets/67184/b83d8fea-d590-4bc9-900a-e66d6c825193
 
 ## API Description
 
