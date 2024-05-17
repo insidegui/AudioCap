@@ -50,6 +50,7 @@ struct ProcessSelectionView: View {
             } else if let recorder {
                 RecordingView(recorder: recorder)
                     .onChange(of: recorder.isRecording) { wasRecording, isRecording in
+                        /// Each recorder instance can only record a single file, so we create a new file/recorder when recording stops.
                         if wasRecording, !isRecording {
                             createRecorder()
                         }
@@ -74,11 +75,6 @@ struct ProcessSelectionView: View {
 
         let newRecorder = ProcessTapRecorder(fileURL: audioFileURL, tap: tap)
         self.recorder = newRecorder
-    }
-
-    private func handleRecordingStopped() {
-        /// Each recorder instance can only record a single file, so we create a new file/recorder when recording stops.
-        createRecorder()
     }
 
     private func teardownTap() {
