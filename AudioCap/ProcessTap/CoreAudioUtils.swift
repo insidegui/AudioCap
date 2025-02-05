@@ -75,6 +75,32 @@ extension AudioObjectID {
         return processObject
     }
 
+    func readProcessBundleID() -> String? {
+        if let result = try? readString(kAudioProcessPropertyBundleID) {
+            result.isEmpty ? nil : result
+        } else {
+            nil
+        }
+    }
+
+    func readProcessIsRunning() -> Bool {
+        (try? readBool(kAudioProcessPropertyIsRunning)) ?? false
+    }
+
+    /*
+     public var kAudioProcessPropertyPID: AudioObjectPropertySelector { get }
+
+     public var kAudioProcessPropertyBundleID: AudioObjectPropertySelector { get }
+
+     public var kAudioProcessPropertyDevices: AudioObjectPropertySelector { get }
+
+     public var kAudioProcessPropertyIsRunning: AudioObjectPropertySelector { get }
+
+     public var kAudioProcessPropertyIsRunningInput: AudioObjectPropertySelector { get }
+
+     public var kAudioProcessPropertyIsRunningOutput: AudioObjectPropertySelector { get }
+     */
+
     /// Reads the value for `kAudioHardwarePropertyDefaultSystemOutputDevice`, should only be called on the system object.
     func readDefaultSystemOutputDevice() throws -> AudioDeviceID {
         try requireSystemObject()
@@ -129,6 +155,11 @@ extension AudioObjectID {
 
     func readString(_ selector: AudioObjectPropertySelector, scope: AudioObjectPropertyScope = kAudioObjectPropertyScopeGlobal, element: AudioObjectPropertyElement = kAudioObjectPropertyElementMain) throws -> String {
         try read(AudioObjectPropertyAddress(mSelector: selector, mScope: scope, mElement: element), defaultValue: "" as CFString) as String
+    }
+
+    func readBool(_ selector: AudioObjectPropertySelector, scope: AudioObjectPropertyScope = kAudioObjectPropertyScopeGlobal, element: AudioObjectPropertyElement = kAudioObjectPropertyElementMain) throws -> Bool {
+        let value: Int = try read(AudioObjectPropertyAddress(mSelector: selector, mScope: scope, mElement: element), defaultValue: 0)
+        return value == 1
     }
 
     private func read<T>(_ inAddress: AudioObjectPropertyAddress, defaultValue: T, inQualifierSize: UInt32 = 0, inQualifierData: UnsafeRawPointer? = nil) throws -> T {
