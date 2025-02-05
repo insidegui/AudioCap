@@ -21,7 +21,7 @@ extension AudioProcess {
     }
 }
 
-extension String: LocalizedError {
+extension String: @retroactive LocalizedError {
     public var errorDescription: String? { self }
 }
 

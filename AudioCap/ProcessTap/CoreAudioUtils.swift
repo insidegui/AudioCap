@@ -169,7 +169,7 @@ private extension UInt32 {
     }
 }
 
-extension AudioObjectPropertyAddress: CustomStringConvertible {
+extension AudioObjectPropertyAddress: @retroactive CustomStringConvertible {
     public var description: String {
         let elementDescription = mElement == kAudioObjectPropertyElementMain ? "main" : mElement.fourCharString
         return "\(mSelector.fourCharString)/\(mScope.fourCharString)/\(elementDescription)"
