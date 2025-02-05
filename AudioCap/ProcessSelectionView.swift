@@ -14,16 +14,22 @@ struct ProcessSelectionView: View {
                 Text("Select…")
                     .tag(Optional<AudioProcess>.none)
 
-                ForEach(processController.processes) { process in
-                    HStack {
-                        Image(nsImage: process.icon)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 16, height: 16)
+                ForEach(processController.processGroups) { group in
+                    Section {
+                        ForEach(group.processes) { process in
+                            HStack {
+                                Image(nsImage: process.icon)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 16, height: 16)
 
-                        Text(process.name)
+                                Text(process.name)
+                            }
+                                .tag(Optional<AudioProcess>.some(process))
+                        }
+                    } header: {
+                        Text(group.title)
                     }
-                        .tag(Optional<AudioProcess>.some(process))
                 }
             }
             .disabled(recorder?.isRecording == true)

@@ -17,6 +17,12 @@ struct AudioProcess: Identifiable, Hashable, Sendable {
     var objectID: AudioObjectID
 }
 
+struct AudioProcessGroup: Identifiable, Hashable, Sendable {
+    var id: String
+    var title: String
+    var processes: [AudioProcess]
+}
+
 extension AudioProcess.Kind {
     var defaultIcon: NSImage {
         switch self {
@@ -45,7 +51,15 @@ final class AudioProcessController {
 
     private let logger = Logger(subsystem: kAppSubsystem, category: String(describing: AudioProcessController.self))
 
-    private(set) var processes = [AudioProcess]()
+    private(set) var processes = [AudioProcess]() {
+        didSet {
+            guard processes != oldValue else { return }
+
+            processGroups = AudioProcessGroup.groups(with: processes)
+        }
+    }
+
+    private(set) var processGroups = [AudioProcessGroup]()
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -86,7 +100,13 @@ final class AudioProcessController {
             }
 
             self.processes = updatedProcesses
-                .sorted(by: { $0.name.localizedStandardCompare($1.name) == .orderedAscending })
+                .sorted { // Keep processes with audio active always on top
+                    if $0.name.localizedStandardCompare($1.name) == .orderedAscending {
+                        $1.audioActive && !$0.audioActive ? false : true
+                    } else {
+                        $0.audioActive && !$1.audioActive ? true : false
+                    }
+                }
         } catch {
             logger.error("Error reading process list: \(error, privacy: .public)")
         }
@@ -134,13 +154,42 @@ private extension AudioProcess {
 
         self.init(
             id: pid,
-            kind: .process,
+            kind: bundleURL?.isApp == true ? .app : .process,
             name: name,
             audioActive: objectID.readProcessIsRunning(),
             bundleID: bundleID.flatMap { $0.isEmpty ? nil : $0 },
             bundleURL: bundleURL,
             objectID: objectID
         )
+    }
+}
+
+// MARK: - Grouping
+
+extension AudioProcessGroup {
+    static func groups(with processes: [AudioProcess]) -> [AudioProcessGroup] {
+        var byKind = [AudioProcess.Kind: AudioProcessGroup]()
+
+        for process in processes {
+            byKind[process.kind, default: .init(for: process.kind)].processes.append(process)
+        }
+
+        return byKind.values.sorted(by: { $0.title.localizedStandardCompare($1.title) == .orderedAscending })
+    }
+}
+
+extension AudioProcessGroup {
+    init(for kind: AudioProcess.Kind) {
+        self.init(id: kind.rawValue, title: kind.groupTitle, processes: [])
+    }
+}
+
+extension AudioProcess.Kind {
+    var groupTitle: String {
+        switch self {
+        case .process: "Processes"
+        case .app: "Apps"
+        }
     }
 }
 
@@ -187,5 +236,9 @@ private extension URL {
 
     var isBundle: Bool {
         (try? resourceValues(forKeys: [.contentTypeKey]))?.contentType?.conforms(to: .bundle) == true
+    }
+
+    var isApp: Bool {
+        (try? resourceValues(forKeys: [.contentTypeKey]))?.contentType?.conforms(to: .application) == true
     }
 }
