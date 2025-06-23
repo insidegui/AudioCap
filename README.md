@@ -8,6 +8,8 @@ This project is provided as documentation for this new API to help developers of
 
 https://github.com/insidegui/AudioCap/assets/67184/95d72d1f-a4d6-4544-9d2f-a2ab99507cfc
 
+[Click here to watch Realtime Buffer demo video](assets/RealtimeBufferDemo.mp4)
+
 ## API Description
 
 Here’s a brief summary of the new API added in macOS 14.4 and how to put everything together.

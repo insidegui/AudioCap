@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC537FC52E09E7CA00503A96 /* RealtimeAudioMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC537FC42E09E7CA00503A96 /* RealtimeAudioMonitor.swift */; };
+		CC537FC72E09E7D500503A96 /* VoiceActivityDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC537FC62E09E7D500503A96 /* VoiceActivityDetector.swift */; };
+		CC537FC92E09E7EC00503A96 /* RealtimeVADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC537FC82E09E7EC00503A96 /* RealtimeVADView.swift */; };
 		F431728D2BF68C0C00D918A3 /* AudioRecordingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431728C2BF68C0C00D918A3 /* AudioRecordingPermission.swift */; };
 		F43172902BF6A92900D918A3 /* AudioProcessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431728F2BF6A92900D918A3 /* AudioProcessController.swift */; };
 		F43172922BF6ABB000D918A3 /* ProcessSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43172912BF6ABB000D918A3 /* ProcessSelectionView.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC537FC42E09E7CA00503A96 /* RealtimeAudioMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeAudioMonitor.swift; sourceTree = "<group>"; };
+		CC537FC62E09E7D500503A96 /* VoiceActivityDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceActivityDetector.swift; sourceTree = "<group>"; };
+		CC537FC82E09E7EC00503A96 /* RealtimeVADView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeVADView.swift; sourceTree = "<group>"; };
 		F431728C2BF68C0C00D918A3 /* AudioRecordingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingPermission.swift; sourceTree = "<group>"; };
 		F431728E2BF691D900D918A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F431728F2BF6A92900D918A3 /* AudioProcessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProcessController.swift; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 			children = (
 				F431728C2BF68C0C00D918A3 /* AudioRecordingPermission.swift */,
 				F431728F2BF6A92900D918A3 /* AudioProcessController.swift */,
+				CC537FC42E09E7CA00503A96 /* RealtimeAudioMonitor.swift */,
+				CC537FC62E09E7D500503A96 /* VoiceActivityDetector.swift */,
 				F43172932BF6B01000D918A3 /* ProcessTap.swift */,
 				F43172952BF787C300D918A3 /* CoreAudioUtils.swift */,
 			);
@@ -94,6 +102,7 @@
 				F47AD9412BF5B61E005B75AC /* AudioCapApp.swift */,
 				F47AD9432BF5B61E005B75AC /* RootView.swift */,
 				F43172912BF6ABB000D918A3 /* ProcessSelectionView.swift */,
+				CC537FC82E09E7EC00503A96 /* RealtimeVADView.swift */,
 				F43172992BF7A51A00D918A3 /* RecordingView.swift */,
 				F431729B2BF7B66A00D918A3 /* FileProxyView.swift */,
 				F43172A02BF7BF1300D918A3 /* RecordingIndicator.swift */,
@@ -183,8 +192,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC537FC52E09E7CA00503A96 /* RealtimeAudioMonitor.swift in Sources */,
 				F43172902BF6A92900D918A3 /* AudioProcessController.swift in Sources */,
 				F43172942BF6B01000D918A3 /* ProcessTap.swift in Sources */,
+				CC537FC72E09E7D500503A96 /* VoiceActivityDetector.swift in Sources */,
 				F43172922BF6ABB000D918A3 /* ProcessSelectionView.swift in Sources */,
 				F47AD9442BF5B61E005B75AC /* RootView.swift in Sources */,
 				F47AD9422BF5B61E005B75AC /* AudioCapApp.swift in Sources */,
@@ -192,6 +203,7 @@
 				F431729A2BF7A51A00D918A3 /* RecordingView.swift in Sources */,
 				F43172A12BF7BF1300D918A3 /* RecordingIndicator.swift in Sources */,
 				F43172962BF787C300D918A3 /* CoreAudioUtils.swift in Sources */,
+				CC537FC92E09E7EC00503A96 /* RealtimeVADView.swift in Sources */,
 				F431729C2BF7B66A00D918A3 /* FileProxyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"AudioCap/Preview Content\"";
-				DEVELOPMENT_TEAM = 8C7439RJLG;
+				DEVELOPMENT_TEAM = BD72FKWLAY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -355,7 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"AudioCap/Preview Content\"";
-				DEVELOPMENT_TEAM = 8C7439RJLG;
+				DEVELOPMENT_TEAM = BD72FKWLAY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
