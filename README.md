@@ -11,6 +11,10 @@ https://github.com/insidegui/AudioCap/assets/67184/95d72d1f-a4d6-4544-9d2f-a2ab9
 
 
 
+https://github.com/user-attachments/assets/efc03340-1d1c-46bc-92b4-ee6e1e763dbc
+
+
+
 
 
 
