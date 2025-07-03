@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		CC537FC52E09E7CA00503A96 /* RealtimeAudioMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC537FC42E09E7CA00503A96 /* RealtimeAudioMonitor.swift */; };
 		CC537FC72E09E7D500503A96 /* VoiceActivityDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC537FC62E09E7D500503A96 /* VoiceActivityDetector.swift */; };
-		CC537FC92E09E7EC00503A96 /* RealtimeVADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC537FC82E09E7EC00503A96 /* RealtimeVADView.swift */; };
+		CC98B1A62E17370900A4EDAB /* ProcessSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98B1A02E17370900A4EDAB /* ProcessSelectionView.swift */; };
+		CC98B1A72E17370900A4EDAB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98B1A42E17370900A4EDAB /* RootView.swift */; };
+		CC98B1A82E17370900A4EDAB /* RecordingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98B1A22E17370900A4EDAB /* RecordingIndicator.swift */; };
+		CC98B1A92E17370900A4EDAB /* FileProxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98B19F2E17370900A4EDAB /* FileProxyView.swift */; };
+		CC98B1AA2E17370900A4EDAB /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98B1A32E17370900A4EDAB /* RecordingView.swift */; };
+		CC98B1AB2E17370900A4EDAB /* RealtimeVADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98B1A12E17370900A4EDAB /* RealtimeVADView.swift */; };
 		F431728D2BF68C0C00D918A3 /* AudioRecordingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431728C2BF68C0C00D918A3 /* AudioRecordingPermission.swift */; };
 		F43172902BF6A92900D918A3 /* AudioProcessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431728F2BF6A92900D918A3 /* AudioProcessController.swift */; };
-		F43172922BF6ABB000D918A3 /* ProcessSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43172912BF6ABB000D918A3 /* ProcessSelectionView.swift */; };
 		F43172942BF6B01000D918A3 /* ProcessTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43172932BF6B01000D918A3 /* ProcessTap.swift */; };
 		F43172962BF787C300D918A3 /* CoreAudioUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43172952BF787C300D918A3 /* CoreAudioUtils.swift */; };
-		F431729A2BF7A51A00D918A3 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43172992BF7A51A00D918A3 /* RecordingView.swift */; };
-		F431729C2BF7B66A00D918A3 /* FileProxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431729B2BF7B66A00D918A3 /* FileProxyView.swift */; };
-		F43172A12BF7BF1300D918A3 /* RecordingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43172A02BF7BF1300D918A3 /* RecordingIndicator.swift */; };
 		F47AD9422BF5B61E005B75AC /* AudioCapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47AD9412BF5B61E005B75AC /* AudioCapApp.swift */; };
-		F47AD9442BF5B61E005B75AC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47AD9432BF5B61E005B75AC /* RootView.swift */; };
 		F47AD9462BF5B61F005B75AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47AD9452BF5B61F005B75AC /* Assets.xcassets */; };
 		F47AD9492BF5B61F005B75AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47AD9482BF5B61F005B75AC /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -27,20 +27,20 @@
 /* Begin PBXFileReference section */
 		CC537FC42E09E7CA00503A96 /* RealtimeAudioMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeAudioMonitor.swift; sourceTree = "<group>"; };
 		CC537FC62E09E7D500503A96 /* VoiceActivityDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceActivityDetector.swift; sourceTree = "<group>"; };
-		CC537FC82E09E7EC00503A96 /* RealtimeVADView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeVADView.swift; sourceTree = "<group>"; };
+		CC98B19F2E17370900A4EDAB /* FileProxyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProxyView.swift; sourceTree = "<group>"; };
+		CC98B1A02E17370900A4EDAB /* ProcessSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessSelectionView.swift; sourceTree = "<group>"; };
+		CC98B1A12E17370900A4EDAB /* RealtimeVADView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeVADView.swift; sourceTree = "<group>"; };
+		CC98B1A22E17370900A4EDAB /* RecordingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingIndicator.swift; sourceTree = "<group>"; };
+		CC98B1A32E17370900A4EDAB /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		CC98B1A42E17370900A4EDAB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F431728C2BF68C0C00D918A3 /* AudioRecordingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingPermission.swift; sourceTree = "<group>"; };
 		F431728E2BF691D900D918A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F431728F2BF6A92900D918A3 /* AudioProcessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProcessController.swift; sourceTree = "<group>"; };
-		F43172912BF6ABB000D918A3 /* ProcessSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessSelectionView.swift; sourceTree = "<group>"; };
 		F43172932BF6B01000D918A3 /* ProcessTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTap.swift; sourceTree = "<group>"; };
 		F43172952BF787C300D918A3 /* CoreAudioUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAudioUtils.swift; sourceTree = "<group>"; };
-		F43172992BF7A51A00D918A3 /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
-		F431729B2BF7B66A00D918A3 /* FileProxyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProxyView.swift; sourceTree = "<group>"; };
 		F431729E2BF7BB0E00D918A3 /* Main.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Main.xcconfig; sourceTree = "<group>"; };
-		F43172A02BF7BF1300D918A3 /* RecordingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingIndicator.swift; sourceTree = "<group>"; };
 		F47AD93E2BF5B61E005B75AC /* AudioCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47AD9412BF5B61E005B75AC /* AudioCapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCapApp.swift; sourceTree = "<group>"; };
-		F47AD9432BF5B61E005B75AC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F47AD9452BF5B61F005B75AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F47AD9482BF5B61F005B75AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F47AD94A2BF5B61F005B75AC /* AudioCap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AudioCap.entitlements; sourceTree = "<group>"; };
@@ -57,6 +57,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC98B1A52E17370900A4EDAB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC98B19F2E17370900A4EDAB /* FileProxyView.swift */,
+				CC98B1A02E17370900A4EDAB /* ProcessSelectionView.swift */,
+				CC98B1A12E17370900A4EDAB /* RealtimeVADView.swift */,
+				CC98B1A22E17370900A4EDAB /* RecordingIndicator.swift */,
+				CC98B1A32E17370900A4EDAB /* RecordingView.swift */,
+				CC98B1A42E17370900A4EDAB /* RootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F431729D2BF7BB0600D918A3 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +113,7 @@
 				F431729D2BF7BB0600D918A3 /* Config */,
 				F431729F2BF7BD4700D918A3 /* ProcessTap */,
 				F47AD9412BF5B61E005B75AC /* AudioCapApp.swift */,
-				F47AD9432BF5B61E005B75AC /* RootView.swift */,
-				F43172912BF6ABB000D918A3 /* ProcessSelectionView.swift */,
-				CC537FC82E09E7EC00503A96 /* RealtimeVADView.swift */,
-				F43172992BF7A51A00D918A3 /* RecordingView.swift */,
-				F431729B2BF7B66A00D918A3 /* FileProxyView.swift */,
-				F43172A02BF7BF1300D918A3 /* RecordingIndicator.swift */,
+				CC98B1A52E17370900A4EDAB /* Views */,
 				F431728E2BF691D900D918A3 /* Info.plist */,
 				F47AD9452BF5B61F005B75AC /* Assets.xcassets */,
 				F47AD94A2BF5B61F005B75AC /* AudioCap.entitlements */,
@@ -150,7 +158,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					F47AD93D2BF5B61E005B75AC = {
 						CreatedOnToolsVersion = 15.3;
@@ -192,19 +200,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC98B1A62E17370900A4EDAB /* ProcessSelectionView.swift in Sources */,
+				CC98B1A72E17370900A4EDAB /* RootView.swift in Sources */,
+				CC98B1A82E17370900A4EDAB /* RecordingIndicator.swift in Sources */,
+				CC98B1A92E17370900A4EDAB /* FileProxyView.swift in Sources */,
+				CC98B1AA2E17370900A4EDAB /* RecordingView.swift in Sources */,
+				CC98B1AB2E17370900A4EDAB /* RealtimeVADView.swift in Sources */,
 				CC537FC52E09E7CA00503A96 /* RealtimeAudioMonitor.swift in Sources */,
 				F43172902BF6A92900D918A3 /* AudioProcessController.swift in Sources */,
 				F43172942BF6B01000D918A3 /* ProcessTap.swift in Sources */,
 				CC537FC72E09E7D500503A96 /* VoiceActivityDetector.swift in Sources */,
-				F43172922BF6ABB000D918A3 /* ProcessSelectionView.swift in Sources */,
-				F47AD9442BF5B61E005B75AC /* RootView.swift in Sources */,
 				F47AD9422BF5B61E005B75AC /* AudioCapApp.swift in Sources */,
 				F431728D2BF68C0C00D918A3 /* AudioRecordingPermission.swift in Sources */,
-				F431729A2BF7A51A00D918A3 /* RecordingView.swift in Sources */,
-				F43172A12BF7BF1300D918A3 /* RecordingIndicator.swift in Sources */,
 				F43172962BF787C300D918A3 /* CoreAudioUtils.swift in Sources */,
-				CC537FC92E09E7EC00503A96 /* RealtimeVADView.swift in Sources */,
-				F431729C2BF7B66A00D918A3 /* FileProxyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +254,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BD72FKWLAY;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -311,7 +321,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = BD72FKWLAY;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -340,8 +352,8 @@
 				CODE_SIGN_ENTITLEMENTS = AudioCap/AudioCap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"AudioCap/Preview Content\"";
-				DEVELOPMENT_TEAM = BD72FKWLAY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -366,8 +378,8 @@
 				CODE_SIGN_ENTITLEMENTS = AudioCap/AudioCap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"AudioCap/Preview Content\"";
-				DEVELOPMENT_TEAM = BD72FKWLAY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
