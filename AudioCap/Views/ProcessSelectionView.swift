@@ -5,6 +5,7 @@ struct ProcessSelectionView: View {
     @State private var processController = AudioProcessController()
     @State private var tap: ProcessTap?
     @State private var recorder: ProcessTapRecorder?
+    @State private var realtimeMonitor: RealtimeAudioMonitor?
 
     @State private var selectedProcess: AudioProcess?
 
@@ -39,8 +40,10 @@ struct ProcessSelectionView: View {
 
                 if let newValue {
                     setupRecording(for: newValue)
+                    setupRealtimeMonitoring(for: newValue)
                 } else if oldValue == tap?.process {
                     teardownTap()
+                    teardownRealtimeMonitoring()
                 }
             }
         } header: {
@@ -61,6 +64,69 @@ struct ProcessSelectionView: View {
                             createRecorder()
                         }
                     }
+            }
+        }
+        
+        // Real-time VAD monitoring section
+        if let monitor = realtimeMonitor {
+            Section {
+                VStack(spacing: 12) {
+                    HStack {
+                        if monitor.isMonitoring {
+                            Button("Stop Real-time Analysis") {
+                                monitor.stopMonitoring()
+                            }
+                            .buttonStyle(.bordered)
+                        } else {
+                            Button("Start Real-time Analysis") {
+                                handlingErrors {
+                                    try monitor.startMonitoring()
+                                }
+                            }
+                            .buttonStyle(.borderedProminent)
+                        }
+                        
+                        Spacer()
+                        
+                        if monitor.isMonitoring {
+                            HStack {
+                                Circle()
+                                    .fill(Color.green)
+                                    .frame(width: 8, height: 8)
+                                    .opacity(0.8)
+                                    .animation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true), value: monitor.isMonitoring)
+                                
+                                Text("Live")
+                                    .font(.caption)
+                                    .foregroundColor(.green)
+                            }
+                        }
+                    }
+                    
+                    if monitor.isMonitoring {
+                        RealtimeVADView(vad: monitor.voiceActivityDetector)
+                    } else {
+                        Text("Real-time voice activity detection analyzes audio in 4800-sample frames (0.1s at 48kHz) using RMS threshold of 0.01")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.vertical, 8)
+                    }
+                }
+            } header: {
+                HStack {
+                    Image(systemName: "waveform.badge.magnifyingglass")
+                        .foregroundColor(.blue)
+                    Text("Real-time Analysis")
+                        .font(.headline)
+                }
+            }
+            
+            if let errorMessage = monitor.errorMessage {
+                Text(errorMessage)
+                    .font(.caption)
+                    .foregroundStyle(.red)
+                    .padding(.top, 4)
             }
         }
     }
@@ -85,6 +151,24 @@ struct ProcessSelectionView: View {
 
     private func teardownTap() {
         tap = nil
+    }
+    
+    private func setupRealtimeMonitoring(for process: AudioProcess) {
+        let monitor = RealtimeAudioMonitor(process: process)
+        self.realtimeMonitor = monitor
+    }
+    
+    private func teardownRealtimeMonitoring() {
+        realtimeMonitor?.stopMonitoring()
+        realtimeMonitor = nil
+    }
+    
+    private func handlingErrors(perform block: () throws -> Void) {
+        do {
+            try block()
+        } catch {
+            NSAlert(error: error).runModal()
+        }
     }
 }
 
